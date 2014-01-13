@@ -13,6 +13,10 @@
 <% if @server_storeconfigs_backend -%>
     storeconfigs   = true
     storeconfigs_backend = <%= @server_storeconfigs_backend %>
+    dbadapter = mysql
+    dbpassword = puppet
+    dbuser = puppet
+    dbserver = localhost
 <% end -%>
 
 <% if scope.lookupvar("puppet::server_git_repo") ||
