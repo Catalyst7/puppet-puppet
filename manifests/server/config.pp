@@ -15,11 +15,13 @@ class puppet::server::config inherits puppet::config {
   file { "${puppet::server_ssl_dir}/private_keys":
     group => $puppet::server_group,
     mode  => '0750',
+    owner => puppet,
   }
 
   file { "${puppet::server_ssl_dir}/private_keys/${::fqdn}.pem":
     group => $puppet::server_group,
     mode  => '0640',
+    owner => puppet,
   }
 
   # Include foreman components for the puppetmaster
